@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% include "_bootstrap_head.html" %}
+    <title>{% block title %}{% if title %}{{ title }}{% else %}Film Diary{% endif %}{% endblock %}</title>
+    <style>
+        body {
+            background: #ffffff;
+        }
+
+        .navbar.bg-dark {
+            background-color: #00e054 !important;
+        }
+
+        .film {
+            color: #0000ff;
+        }
+
+        .diary {
+            color: #dc143c;
+        }
+    </style>
+    
+</head>
+<body>
+{% include "_navbar.html" %}
+<div class="container-fluid pt-3">
+    {% block content %}
+    {% endblock %}
+</div>
+{% include "_bootstrap_scripts.html" %}
+{% block scripts %}
+{% endblock %}
+</body>
+</html>

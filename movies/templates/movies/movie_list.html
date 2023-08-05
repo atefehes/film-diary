@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Film Diary{% endblock %}
+{% block content %}
+<style>
+    div.container {
+        text-align: center;
+    }
+    
+    ul.movies {
+        display: inline-block;
+        text-align: left;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>My Film Diary</h2>
+            <ul class="movies">
+            {% for logged_movie in logged_movies %}
+                <li> {% if logged_movie.seen %}
+                    <p>{{ logged_movie.movie_name.title }}  <small>&#x23F1; {{ logged_movie.log_time|date:"N d" }}(rewatched) </small></p>
+                    {% else %}
+                    <p>{{ logged_movie.movie_name.title }}  <small>&#x23F1; {{ logged_movie.log_time|date:"N d" }} </small></p>
+                    {% endif %}
+                </li>
+            {% empty %}
+                <li>You haven't add any Film yet.</li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}My Films{% endblock %}
+{% block content %}
+<head>
+    <style>
+        .image-thumbail {
+            max-height: 350px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row mt gy-5">
+            {% for movie in my_movies %}
+            <div class="col-md">
+                <a href="{% url 'movie_detail_ui' movie.imdb_id %}">
+                <img class="image-thumbail" src="{{movie.poster_url}}" alt={{movie.title}}></a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+{% endblock %}
