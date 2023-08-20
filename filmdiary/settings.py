@@ -140,8 +140,6 @@ class Dev(Configuration):
 
     OMDB_KEY = values.SecretValue()
 
-    OMDB_KEY = "4ce17645"
-
     LANGUAGE_CODE = 'en-us'
 
     TIME_ZONE = 'UTC'
